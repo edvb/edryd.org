@@ -1,0 +1,7 @@
+<div class="row text-inc">
+  {{ if eq .Section "posts" }}
+    <div class="col-12 col-lg-6"><a href="{{ .Permalink }}">{{ .Title }}</a></div>
+    <div class="col-6 col-lg-2 text-lg-right offset-lg-2 order-lg-first">{{ .Date.Format "Jan 2, 2006" }}</div>
+    <div class="col-6 col-lg-2 text-right text-lg-left"><i class="far fa-clock pr-2"></i>{{ .ReadingTime }} mins</div>
+  {{ end }}
+</div>

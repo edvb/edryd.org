@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      {{ if lt (.Get "limit") 10 }}
+        <h2 class="heading pt-5">{{ .Get "dir" | upper }}</h2>
+      {{ end }}
+      <div class="row">
+        {{ $dir := (path.Join "/photos/" (replace (.Get "dir") " " "-")) }}
+        {{ range first (.Get "limit") (readDir (path.Join "/static/img" $dir)) }}
+          {{ $imgURL := path.Join "/img" $dir .Name | relURL }}
+          <div class="col-sm-4 p-2">
+            <a href="{{ $imgURL }}" data-lightbox="image-1">
+              <!-- TODO generate thumbnail -->
+              <!-- TODO fix for mobile not being full width -->
+              <img src="{{ $imgURL }}" alt="image" class="img-card">
+            </a>
+          </div>
+        {{ end }}
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-3 btn-effect">
+          {{ if lt (.Get "limit") 10 }}
+            <a class="btn btn-block" href="{{ $dir }}">
+              See More <i class="fa fa-images ml-2"></i>
+            </a>
+          {{ else }}
+            <a class="btn btn-block" href="..">
+              All Photos <i class="fa fa-images ml-2"></i>
+            </a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

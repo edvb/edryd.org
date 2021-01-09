@@ -1,0 +1,13 @@
+# swap files
+*~
+*.swn
+*.swo
+*.swp
+\#*\#
+
+tags
+Session.vim
+public
+resources
+content/photos/[^_]*.md
+content/projects/[^_]*.md

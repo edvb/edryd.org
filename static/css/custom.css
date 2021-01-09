@@ -1,0 +1,114 @@
+.links a {
+  color: #111;
+  text-decoration: none;
+}
+
+.text-med {
+  font-size: 105%
+}
+
+.text-inc {
+  font-size: 125%
+}
+
+.slant-up {
+  clip-path: polygon(0 5vw, 100% 0, 100% calc(100% - 5vw), 0 100%);
+}
+
+.slant-t-up {
+  clip-path: polygon(0 5vw, 100% 0, 100% 100%, 0 100%);
+}
+
+.pt-7 {
+  padding-top: 9rem !important;
+}
+
+.img-card {
+    width: 100%;
+    height: 15vw;
+    object-fit: contain;
+}
+
+.change-icon > .fa + .fa,
+.change-icon:hover > .fa {
+  display: none;
+}
+.change-icon:hover > .fa + .fa {
+  display: inherit;
+}
+
+/* 404 page */
+.error {
+  margin: 10px auto;
+  max-width: 600px;
+  text-align: center;
+  h1 {
+    margin: 30px 0;
+    font-size: 10em;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+}
+
+.btn-effect a {
+  padding: 0 20px;
+  height: 45px;
+  line-height: 45px;
+  position: relative;
+  display: inline-block;
+  margin: 15px 25px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  text-shadow: 0 0 1px rgba(255,255,255,0.3);
+}
+
+.btn-effect a::before,
+.btn-effect a::after {
+  position: absolute;
+  width: 45px;
+  height: 1px;
+  background: #777;
+  content: '';
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
+.btn-effect a::before {
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+.btn-effect a::after {
+  right: 0;
+  bottom: 0;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-transform-origin: 100% 0;
+  -moz-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+}
+
+.btn-effect a:hover::before,
+.btn-effect a:focus::before {
+  left: 50%;
+  -webkit-transform: rotate(0deg) translateX(-50%);
+  -moz-transform: rotate(0deg) translateX(-50%);
+  transform: rotate(0deg) translateX(-50%);
+}
+
+.btn-effect a:hover::after,
+.btn-effect a:focus::after {
+  right: 50%;
+  -webkit-transform: rotate(0deg) translateX(50%);
+  -moz-transform: rotate(0deg) translateX(50%);
+  transform: rotate(0deg) translateX(50%);
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <title>{{ if not (eq .Title .Site.Title) }}{{ .Title }} - {{ end }}edryd</title>
+    <meta name="description" content="Ed van Bruggen's personal website">
+    <link rel="stylesheet" href="{{ "css/bootstrap.min.css" | relURL}}">
+    <link rel="stylesheet" href="{{ "css/fontawesome.min.css" | relURL }}">
+    <!-- TODO make fonts local -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Raleway:wght@800&display=swap">
+    <link rel="stylesheet" href="{{ "css/lightbox.min.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/theme.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
+    <link rel="shortcut icon" href="{{ "img/favicon.png" | relURL }}">
+  </head>
+  <body>
+
+    <header class="header">
+      <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container">
+          <!-- TODO improve name nav look -->
+          <a href="{{ "index.html" | relURL }}" class="navbar-brand link-scroll italic-off">edryd</a>
+          <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+          <div id="navbarSupportedContent" class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a href="{{ "index.html#about" | relURL }}" class="nav-link">about</a></li>
+              <li class="nav-item"><a href="{{ "posts" | relURL }}" class="nav-link">posts</a></li>
+              <li class="nav-item"><a href="{{ "projects" | relURL }}" class="nav-link">projects</a></li>
+              <li class="nav-item"><a href="{{ "photos" | relURL }}" class="nav-link">photos</a></li>
+              <li class="nav-item"><a href="{{ "index.html#contact" | relURL }}" class="nav-link">contact</a></li>
+              <li class="nav-item"><a href="https://git.edryd.org" class="nav-link">code</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    {{- block "main" . }}{{- end }}
+
+    <footer class="section-dark pt-7 slant-t-up">
+      <div class="container">
+        <div class="row copyright">
+          <div class="col-md-6">
+            <p class="mb-md-0 text-center text-md-left">
+              {{ .Site.Copyright }}
+            </p>
+          </div>
+          <div class="col-md-6">
+            <p class="links mb-md-0 text-center text-inc text-md-right">
+              {{ partial "links.html" }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="{{ "js/jquery.min.js" | relURL }}"></script>
+    <script src="{{ "js/bootstrap.bundle.min.js" | relURL }}"></script>
+    <script src="{{ "js/lightbox.min.js" | relURL }}"></script>
+  </body>
+</html>

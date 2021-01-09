@@ -1,0 +1,10 @@
+<figure class="text-center pt-3">
+  <blockquote class="blockquote pl-3">
+    <p>“{{ index . 0 }}”</p>
+  </blockquote>
+  {{ with (index . 1) }}
+    <figcaption class="blockquote-footer italic">
+      {{ . }}
+    </figcaption>
+  {{ end }}
+</figure>

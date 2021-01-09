@@ -1,0 +1,23 @@
+photos:
+  - name: 'seattle'
+    year: 2020
+    lat: 37.29
+    long: -122.16
+  - name: 'quarantine'
+    year: 2020
+    lat: 37.29
+    long: -122.16
+  - name: 'galapagos'
+    year: 2017
+    lat: -.40
+    long: -90.33
+  - name: 'britain'
+    year: 2016
+    lat: 51.30
+    long: -.07
+  - name: 'france'
+    lat: 48.51
+    long: 2.21
+  - name: 'peru'
+    lat: -12.03
+    long: -77.02

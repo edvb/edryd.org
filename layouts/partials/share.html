@@ -1,0 +1,22 @@
+<div class="links text-inc pt-2">
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" class="fab fa-facebook"></a>
+  <a href="https://twitter.com/share?url={{ .Permalink }}&text={{ .Title }}" class="fab fa-twitter-square"></a>
+  <a href="mailto:?subject={{ .Title }}&body=Check out this article: {{ .Permalink }}" class="change-icon">
+    <i class="fa fa-envelope"></i>
+    <i class="fa fa-envelope-open"></i>
+  </a>
+  <a href="https://reddit.com/submit?url={{ .Permalink }}&title={{ .Title }}" class="fab fa-reddit"></a>
+  <a href="https://news.ycombinator.com/submitlink?u={{ .Permalink }}&t={{ .Title }}" class="fab fa-hacker-news-square"></a>
+  <a href="https://www.linkedin.com/shareArticle?url={{ .Permalink }}&title={{ .Title }}&summary={{ .Summary }}" class="fab fa-linkedin"></a>
+  <button onclick="clipboard_copy()" class="fas fa-link" style="border:none; background:none;"></button>
+  <script async>
+    function clipboard_copy() {
+      $("body").append('<input id="copyURL" type="text" value="" />');
+      $("#copyURL").val(window.location.href).select();
+      document.execCommand("copy");
+      $("#copyURL").remove();
+      document.execCommand("copy");
+      /* TODO show "copied to clipboard" */
+    }
+  </script>
+</div>

@@ -1,0 +1,63 @@
+{{ define "main" }}
+  <section itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="container">
+
+      <header class="post-header heading">
+        <h1>{{ .Title }}</h1>
+        {{ with .Description }}
+          <h3>{{ . }}</h3>
+        {{ end }}
+        <h5 class="post-meta">
+          <!-- TODO fix author -->
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span itemprop="name">{{ .Site.Author.Name }}</span>
+          </span>
+          {{ if eq .Section "posts" }}
+            <time datetime="{{ .Date }}" itemprop="datePublished">
+              <i class="far fa-calendar"></i> {{ .Date.Format "Jan 2, 2006" }}
+            </time>
+            <i class="far fa-clock"></i> {{ .ReadingTime }} mins
+          {{ end }}
+
+          {{ partial "share.html" }}
+        </h5>
+      </header>
+
+      <div class="post-content" itemprop="articleBody">
+        {{ .Content }}
+      </div>
+
+      {{ if eq .Section "posts" }}
+        <h5 class="pt-4" style="text-transform: none;">
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span itemprop="name">Ed van Bruggen</span>
+          </span>
+        </h5>
+      {{ end }}
+
+      {{ if not (eq .Section "projects") }}
+        <div class="row text-center justify-content-between pt-4">
+          <div class="col-md-4">
+            {{ with .PrevInSection }}
+              <span class="block text-inc text-bold">Previous:</span>
+              <a class="btn btn-block text-med" href="{{ .Permalink }}">
+                <i class="fa fa-arrow-left mr-1"></i>
+                {{ .Title | title }}
+              </a>
+            {{ end }}
+          </div>
+          <div class="col-md-4">
+            {{ with .NextInSection }}
+              <span class="block text-inc text-bold">Next:</span>
+              <a class="btn btn-block text-med" href="{{ .Permalink }}">
+                {{ .Title | title }}
+                <i class="fa fa-arrow-right ml-1"></i>
+              </a>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+
+    </div>
+  </section>
+{{ end }}

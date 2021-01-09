@@ -1,0 +1,9 @@
+{{ if eq .Text "Build Status" }}
+  <div>
+    <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" {{ end }} class="img-fluid"/>
+  </div>
+{{ else }}
+  <div class="col-12 text-center">
+    <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" {{ end }} class="img-fluid p-md-5"/>
+  </div>
+{{ end }}

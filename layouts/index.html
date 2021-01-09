@@ -1,0 +1,154 @@
+{{ define "main" }}
+    <section id="about" class="text">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h2 class="heading">ED VAN BRUGGEN</h2>
+            <p>
+            I'm a senior at the University of Washington studying physics and
+            applied math. Currently I'm conducting research on a new Dark Higgs
+            model which would allow for dark matter production at the Large
+            Hadron Collider. In conjunction, I'm working on a
+            <a href="https://iris-hep.org/fellows/edvanbruggen.html">project</a>
+            to automate truth level reinterpretations of particle
+            analyses. I am also the lead web developer for
+            <a href="https://projectmhea.org">Mental Health for Every Adolescent</a>
+            and a member of UW's
+            <a href="https://uwexploitsprisonlabor.com/">United Students Against Sweatshops.</a>
+            </p>
+            <p>
+            In my free time I work on various
+            <a href="{{ "projects" | relURL}}">programming projects</a> and do
+            <a href="{{ "photos" | relURL }}">photography.</a> You can find my full
+            <a href="{{ "docs/vanbruggen_resume.pdf" | relURL}}">resume here</a> and contact
+            information below.
+            </p>
+            <div class="links text-center display-4">
+              {{ partial "links.html" }}
+            </div>
+            {{ partial "quote.html" (index (shuffle $.Site.Data.quotes.quotes) 0) }}
+          </div>
+          <div class="col-lg-5 mx-auto">
+            <p><img src="img/ed.jpg" class="img-fluid rounded-circle"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="posts" class="section-grey slant-up">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="heading">POSTS</h2>
+            <div class="box">
+              {{ range first 5 .Site.RegularPages }}
+                {{ .Render "summary" }}
+              {{ end }}
+            </div>
+            <div class="col-md-2 offset-md-5 btn-effect">
+              <a class="btn btn-block" href="posts">
+                See More <i class="far fa-newspaper ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="heading">PROJECTS</h2>
+            {{ range first 5 .Site.Data.projects.code }}
+              <div class="row text-inc">
+                {{ $link := or .link (path.Join "projects/" .name | relURL) }}
+                <div class="col-lg-4 text-lg-right"><a href="{{ $link }}">{{ .name }}</a></div>
+                <div class="col-lg-6"><a href="{{ $link }}" class="italic-off text-primary">{{ .desc }}</a></div>
+              </div>
+            {{ end }}
+            <div class="col-sm-2 offset-sm-5 btn-effect">
+              <a class="btn btn-block" href="projects">
+                See More <i class="fa fa-rocket ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="photos" class="section-inverse slant-up">
+      <div class="container clearfix">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="heading">PHOTOS</h2>
+            <div class="row">
+              <!-- TODO loop over all files -->
+              {{- $files := shuffle (readDir "/static/img/photos/quarantine") }}
+              {{/* {{- $files := shuffle (readDir $files) */}}
+              {{- range first 9 $files -}}
+                {{- $imgURL := print "/img/photos/quarantine/" .Name | relURL }}
+                <div class="col-md-4">
+                  <div class="box">
+                    <a href="{{ $imgURL }}" data-lightbox="image-1">
+                      <!-- TODO generate thumbnail -->
+                      <img src="{{ $imgURL }}" alt="image" class="img-card">
+                    </a>
+                  </div>
+                </div>
+              {{- end }}
+            <div class="col-md-2 offset-md-5 btn-effect">
+              <a class="btn btn-block" href="photos">
+                See More <i class="fa ml-2 fa-camera"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="background-color: #fff;" class="pb-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="heading">CONTACT</h2>
+            <div class="row">
+              <div class="col-lg-6 offset-lg-3">
+                <form id="contact-form" method="post" action="#" class="contact-form">
+                  <div class="controls">
+                    <div class="form-group">
+                      <input type="text" name="name" placeholder="Name" required="required" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="email" name="email" placeholder="Email" required="required" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <textarea rows="4" name="message" placeholder="Message" required="required" class="form-control"></textarea>
+                    </div>
+                    <div class="text-center">
+                      <button type="submit" name="name" class="btn btn-outline-primary btn-block">
+                        Send <i class="fa ml-2 fa-paper-plane"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!-- <div class="col-lg-6"> -->
+              <!--   <p>Feel free to contact me about any questions or comments you might have. I also do freelance website design and hosting.</p> -->
+              <!--   <div class="text-center display-4"> -->
+              <!--     <a href="contact" class="change-icon"> -->
+              <!--       <i class="fa fa-envelope"></i> -->
+              <!--       <i class="fa fa-envelope-open"></i> -->
+              <!--     </a> -->
+              <!--     <a href="https://www.linkedin.com/in/ed-van-bruggen-58a379171/" class="fa fa-linkedin-square"></a> -->
+              <!--     <a href="https://github.com/edvb" class="fa fa-github"></a> -->
+              <!--     <a href="https://git.edryd.org" class="fa fa-git"></a> -->
+              <!--     <!-1- <a href="{{ "/feed.xml" | relURL }}" class="fa fa-rss"></a> -1-> -->
+              <!--   </div> -->
+              <!-- </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{{ end }}
