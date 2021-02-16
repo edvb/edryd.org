@@ -84,10 +84,10 @@
             <h2 class="heading">PHOTOS</h2>
             <div class="row">
               <!-- TODO loop over all files -->
-              {{- $files := shuffle (readDir "/static/img/photos/quarantine") }}
+              {{- $files := shuffle (readDir "/static/img/photos/best") }}
               {{/* {{- $files := shuffle (readDir $files) */}}
               {{- range first 9 $files -}}
-                {{- $imgURL := print "/img/photos/quarantine/" .Name | relURL }}
+                {{- $imgURL := print "/img/photos/best/" .Name | relURL }}
                 <div class="col-md-4">
                   <div class="box">
                     <a href="{{ $imgURL }}" data-lightbox="image-1">
