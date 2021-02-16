@@ -2,9 +2,11 @@
   <blockquote class="blockquote pl-3">
     <p>“{{ index . 0 }}”</p>
   </blockquote>
-  {{ with (index . 1) }}
-    <figcaption class="blockquote-footer italic">
+  <figcaption class="blockquote-footer italic">
+    {{ with (index . 1) }}
       {{ . }}
-    </figcaption>
-  {{ end }}
+    {{ else }}
+      Unknown
+    {{ end }}
+  </figcaption>
 </figure>
