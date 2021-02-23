@@ -60,11 +60,11 @@
         <div class="row">
           <div class="col-lg-12">
             <h2 class="heading">PROJECTS</h2>
-            {{ range first 5 .Site.Data.projects.projects }}
+            {{ range first 5 .Site.Data.projects.code }}
               <div class="row text-inc">
                 {{ $link := or .link (path.Join "projects/" .name | relURL) }}
                 <div class="col-lg-4 text-lg-right"><a href="{{ $link }}">{{ .name }}</a></div>
-                <div class="col-lg-6"><a href="{{ $link }}" class="italic-off text-primary">{{ .desc }}</a></div>
+                <div class="col-lg-8"><a href="{{ $link }}" class="italic-off text-primary">{{ .desc }}</a></div>
               </div>
             {{ end }}
             <div class="col-sm-2 offset-sm-5 btn-effect">
@@ -83,7 +83,6 @@
           <div class="col-lg-12">
             <h2 class="heading">PHOTOS</h2>
             <div class="row">
-              <!-- TODO loop over all files -->
               {{- $files := shuffle (readDir "/static/img/photos/best") }}
               {{/* {{- $files := shuffle (readDir $files) */}}
               {{- range first 9 $files -}}

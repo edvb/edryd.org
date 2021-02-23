@@ -1,4 +1,4 @@
-projects:
+code:
   - name: 'tisp'
     desc: 'Tiny lisp, simple and embeddable scheme-like language'
   - name: 'gst'
@@ -21,20 +21,30 @@ projects:
     desc: 'Add an element of nyan cat to vim'
   - name: 'tim'
     desc: 'Extendable personal assistant'
-  - header: 'research'
+research:
   - name: 'RECAST-workflow'
     desc: 'IRIS-HEP Fellowship'
     link: 'https://iris-hep.org/fellows/edvanbruggen.html'
   - name: 'mono-sbb'
     desc: 'Dark Higgs model'
     link: 'https://github.com/edvb/mono-sbb'
-  - name: 'Lattice QCD'
+  - name: 'UW DRiP'
     desc: 'Lattice QCD'
     link: '/docs/lattice-qcd.pdf'
   - name: 'Protein Folding'
     desc: 'Rosetta homology simulations'
     link: 'http://2018.igem.org/Team:Washington/Model'
-  - header: "scripts"
+websites:
+  - name: 'MHEA'
+    desc: 'Mental Health for Every Adolescent'
+    link: 'https://projectmhea.org'
+  - name: 'LMB'
+    desc: 'Liam MB Real Estate'
+    link: 'https://lmbrealestate.com'
+  - name: 'UW iGEM'
+    desc: 'Sitdown with SynBio'
+    link: 'http://students.washington.edu/uwigem/sitdownsynbio/'
+scripts:
   - name: 'body'
     id: 'fc7d3ab445e5c917c7158f3a607c24a6'
   - name: 'ed'
@@ -55,10 +65,3 @@ projects:
     id: '1b668d6df73bb7623fe977cfcca182a9'
   - name: 'calc'
     id: 'b2dd8946da6a19349af518bc0be24d57'
-# - websites:
-#   - name: 'MHEA'
-#     link: 'https://projectmhea.org'
-#   - name: 'LMB'
-#     link: 'https://lmbrealestate.org'
-#   - name: 'Synbio'
-#     link: 'http://students.washington.edu/uwigem/sitdownsynbio/'
