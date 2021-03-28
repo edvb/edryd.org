@@ -4,6 +4,7 @@ import yaml
 import urllib.request
 import requests
 import shutil
+import os
 
 # TODO flag -v for verbose printing
 # TODO flag -d for destination
@@ -12,6 +13,7 @@ import shutil
 with open('data/projects.yaml') as d:
     data = yaml.load(d, Loader=yaml.FullLoader)
     # print(data['scripts'])
+    os.mkdir('content/projects')
     for gist in data['scripts']:
         gid = gist['id']
         r = requests.get('https://api.github.com/gists/' + gid)
@@ -39,7 +41,7 @@ with open('data/projects.yaml') as d:
             f.write(f'---\ntitle: {name}\ndescription: {desc}\n---\n')
         url = f'https://raw.githubusercontent.com/edvb/{name}/master/README.md'
         if name == 'tisp':
-            url = 'https://raw.githubusercontent.com/edvb/tisp/master/doc/tisp.1.md'
+            url = 'https://raw.githubusercontent.com/edvb/tisp/master/doc/tisp.7.md'
         with urllib.request.urlopen(url) as response, open(f'content/projects/{name}.md', 'ab') as f:
             for chunk in iter(lambda: response.read(1), ''):
                 if chunk == b'':
