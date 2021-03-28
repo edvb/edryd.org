@@ -1,0 +1,51 @@
+{{ define "main" }}
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          {{- with .Title }}
+            <h1 class="heading">{{ . | upper }}</h1>
+          {{- end }}
+          <div class="row">
+            <!-- TODO remove code duplication from _default/list -->
+            <div class="container">
+              <!-- TODO combine code and scripts, loop over all projects -->
+              {{ range $.Site.Data.projects.code }}
+                <div class="row text-inc">
+                  {{ $link := or .link (path.Join "projects/" .name | relURL) }}
+                  <div class="col-lg-4 text-lg-right"><a href="{{ $link }}">{{ .name }}</a></div>
+                  <div class="col-lg-8"><a href="{{ $link }}" class="italic-off text-primary">{{ .desc }}</a></div>
+                </div>
+              {{ end }}
+              <h2 class="heading pt-4">RESEARCH</h2>
+              {{ range $.Site.Data.projects.research }}
+                <div class="row text-inc">
+                  {{ $link := or .link (path.Join "projects/" .name | relURL) }}
+                  <div class="col-lg-4 text-lg-right"><a href="{{ $link }}">{{ .name }}</a></div>
+                  <div class="col-lg-8"><a href="{{ $link }}" class="italic-off text-primary">{{ .desc }}</a></div>
+                </div>
+              {{ end }}
+              <h2 class="heading pt-4">WEBSITES</h2>
+              <!-- TODO cards with photos -->
+              {{ range $.Site.Data.projects.websites }}
+                <div class="row text-inc">
+                  <div class="col-lg-4 text-lg-right"><a href="{{ .link }}">{{ .name }}</a></div>
+                  <div class="col-lg-8"><a href="{{ .link }}" class="italic-off text-primary">{{ .desc }}</a></div>
+                </div>
+              {{ end }}
+              <h2 class="heading pt-4">SCRIPTS</h2>
+              {{ range $.Site.Data.projects.scripts }}
+                {{ $gist := getJSON "https://api.github.com/gists/" .id }}
+                {{ $link := path.Join "projects/" .name | relURL }}
+                <div class="row text-inc">
+                  <div class="col-lg-4 text-lg-right"><a href="{{ $link }}">{{ .name }}</a></div>
+                  <div class="col-lg-8"><a href="{{ $link }}" class="italic-off text-primary">{{ $gist.description }}</a></div>
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}
