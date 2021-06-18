@@ -4,17 +4,15 @@
       {{ if lt (.Get "limit") 10 }}
         <h2 class="heading pt-5">{{ .Get "dir" | upper }}</h2>
       {{ end }}
-      <div class="row">
+      <div class="row photos">
         {{ $dir := (path.Join "/photos/" (replace (.Get "dir") " " "-")) }}
         {{ range first (.Get "limit") (readDir (path.Join "/static/img" $dir)) }}
           {{ $imgURL := path.Join "/img" $dir .Name | relURL }}
-          <div class="col-sm-4 p-2">
-            <a href="{{ $imgURL }}" data-lightbox="image-1">
-              <!-- TODO generate thumbnail -->
-              <!-- TODO fix for mobile not being full width -->
-              <img src="{{ $imgURL }}" alt="image" class="img-card">
-            </a>
-          </div>
+          {{ $thmURL := path.Join "/img" $dir "thumb." .Name | relURL }}
+          <a href="{{ $imgURL }}" data-lightbox="image-1">
+            <!-- TODO generate thumbnail -->
+            <img src="{{ $imgURL }}" alt="image">
+          </a>
         {{ end }}
       </div>
       <div class="row justify-content-center">

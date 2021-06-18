@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Raleway:wght@800&display=swap">
     <link rel="stylesheet" href="{{ "css/lightbox.min.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/justifiedGallery.min.css" | relURL }}">
     <link rel="stylesheet" href="{{ "css/theme.css" | relURL }}">
     <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
     <link rel="shortcut icon" href="{{ "img/favicon.png" | relURL }}">
@@ -63,5 +64,14 @@
     <script src="{{ "js/jquery.min.js" | relURL }}"></script>
     <script src="{{ "js/bootstrap.bundle.min.js" | relURL }}"></script>
     <script src="{{ "js/lightbox.min.js" | relURL }}"></script>
+    <script src="{{ "js/jquery.justifiedGallery.min.js" | relURL }}"></script>
+    <script>
+      $(".photos").justifiedGallery({
+              rowHeight: 300,
+              margins: 3,
+              lastRow: 'justify',
+              captions: false
+            })
+    </script>
   </body>
 </html>

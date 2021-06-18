@@ -23,12 +23,6 @@
   padding-top: 9rem !important;
 }
 
-.img-card {
-    width: 100%;
-    height: 15vw;
-    object-fit: contain;
-}
-
 .change-icon > .fa + .fa,
 .change-icon:hover > .fa {
   display: none;
