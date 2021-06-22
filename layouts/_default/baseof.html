@@ -72,7 +72,9 @@
       $(".photos").justifiedGallery({
               rowHeight: 300,
               margins: 3,
-              lastRow: 'justify',
+              {{ if or (eq .Title .Site.Title) (eq .Title "photos") }}
+                lastRow: 'hide',
+              {{ end }}
               captions: false
             })
     </script>
