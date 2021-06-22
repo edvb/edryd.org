@@ -35,28 +35,26 @@
         </h5>
       {{ end }}
 
-      {{ if not (eq .Section "projects") }}
-        <div class="row text-center justify-content-between pt-4">
-          <div class="col-md-4">
-            {{ with .PrevInSection }}
-              <span class="block text-inc text-bold">Previous:</span>
-              <a class="btn btn-block text-med" href="{{ .Permalink }}">
-                <i class="fa fa-arrow-left mr-1"></i>
-                {{ .Title | title }}
-              </a>
-            {{ end }}
-          </div>
-          <div class="col-md-4">
-            {{ with .NextInSection }}
-              <span class="block text-inc text-bold">Next:</span>
-              <a class="btn btn-block text-med" href="{{ .Permalink }}">
-                {{ .Title | title }}
-                <i class="fa fa-arrow-right ml-1"></i>
-              </a>
-            {{ end }}
-          </div>
+      <div class="row text-center justify-content-between pt-4">
+        <div class="col-md-4">
+          {{ with .PrevInSection }}
+            <span class="block text-inc text-bold">Previous:</span>
+            <a class="btn btn-block text-med" href="{{ .Permalink }}">
+              <i class="fa fa-arrow-left mr-1"></i>
+              {{ .Title | title }}
+            </a>
+          {{ end }}
         </div>
-      {{ end }}
+        <div class="col-md-4">
+          {{ with .NextInSection }}
+            <span class="block text-inc text-bold">Next:</span>
+            <a class="btn btn-block text-med" href="{{ .Permalink }}">
+              {{ .Title | title }}
+              <i class="fa fa-arrow-right ml-1"></i>
+            </a>
+          {{ end }}
+        </div>
+      </div>
 
     </div>
   </section>
