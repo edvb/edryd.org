@@ -54,12 +54,18 @@ with open('data/projects.yaml') as d:
                     break
             shutil.copyfileobj(response, f)
 
+# TODO replace with parital in layout page
+# https://gohugo.io/templates/lookup-order/
 with open('data/photos.yaml') as d:
     data = yaml.load(d, Loader=yaml.FullLoader)
-    for code in data['photos']:
-        title = code['name']
+    with open(f'content/photos/_index.md', 'w') as f:
+        f.write(f'---\ntitle: photos\n---\n')
+        for album in data['photos']:
+            f.write(f'{{{{< photos limit="5" dir="{album["name"]}">}}}}\n')
+    for album in data['photos']:
+        title = album['name']
         name = title.replace(' ', '-')
         with open(f'content/photos/{name}.md', 'w') as f:
             f.write(f'---\ntitle: {title}\n---\n')
-            f.write(f'{{{{< photos limit="999" dir="{title}">}}}} ')
+            f.write(f'{{{{< photos limit="999" dir="{title}">}}}}\n')
         # print(f'done {name}.md')
