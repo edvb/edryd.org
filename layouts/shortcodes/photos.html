@@ -15,19 +15,21 @@
           </a>
         {{ end }}
       </div>
-      <div class="row justify-content-center">
-        <div class="col-md-3 btn-effect">
-          {{ if lt (.Get "limit") 10 }}
-            <a class="btn btn-block" href="{{ $dir }}">
-              See More <i class="fa fa-images ml-2"></i>
-            </a>
-          {{ else }}
-            <a class="btn btn-block" href="..">
-              All Photos <i class="fa fa-images ml-2"></i>
-            </a>
-          {{ end }}
+      {{ if not (eq (.Get "dir") "best")}}
+        <div class="row justify-content-center">
+          <div class="col-md-3 btn-effect">
+            {{ if lt (.Get "limit") 10 }}
+              <a class="btn btn-block" href="{{ $dir }}">
+                See More <i class="fa fa-images ml-2"></i>
+              </a>
+            {{ else }}
+              <a class="btn btn-block" href="..">
+                All Photos <i class="fa fa-images ml-2"></i>
+              </a>
+            {{ end }}
+          </div>
         </div>
-      </div>
+      {{ end }}
     </div>
   </div>
 </div>

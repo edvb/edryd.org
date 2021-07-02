@@ -60,6 +60,7 @@ with open('data/photos.yaml') as d:
     data = yaml.load(d, Loader=yaml.FullLoader)
     with open(f'content/photos/_index.md', 'w') as f:
         f.write(f'---\ntitle: photos\n---\n')
+        f.write(f'{{{{< photos limit="999" dir="best">}}}}\n')
         for album in data['photos']:
             f.write(f'{{{{< photos limit="5" dir="{album["name"]}">}}}}\n')
     for album in data['photos']:
