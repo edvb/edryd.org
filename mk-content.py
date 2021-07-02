@@ -12,8 +12,9 @@ import os
 # TODO write in tisp
 with open('data/projects.yaml') as d:
     data = yaml.load(d, Loader=yaml.FullLoader)
-    # print(data['scripts'])
-    os.mkdir('content/projects')
+    if not os.path.exists('content/projects'):
+        os.mkdir('content/projects')
+    print(f'creating script pages')
     for gist in data['scripts']:
         gid = gist['id']
         r = requests.get('https://api.github.com/gists/' + gid)
@@ -31,7 +32,7 @@ with open('data/projects.yaml') as d:
                 # TODO view raw file
                 # with open(f'content/projects/{name}', 'w') as fp:
                 #     fp.write(content)
-        # print(f'done {title}.md')
+    print(f'creating project pages')
     for code in data['code']:
         if 'link' in code:
             continue
@@ -56,10 +57,13 @@ with open('data/projects.yaml') as d:
 
 # TODO replace with parital in layout page
 # https://gohugo.io/templates/lookup-order/
+print(f'creating photo pages')
 with open('data/photos.yaml') as d:
     data = yaml.load(d, Loader=yaml.FullLoader)
-    with open(f'content/photos/_index.md', 'w') as f:
-        f.write(f'---\ntitle: photos\n---\n')
+    if not os.path.exists('content/photos'):
+        os.mkdir('content/photos')
+    with open('content/photos/_index.md', 'w') as f:
+        f.write('---\ntitle: photos\n---\n')
         f.write(f'{{{{< photos limit="999" dir="best">}}}}\n')
         for album in data['photos']:
             f.write(f'{{{{< photos limit="5" dir="{album["name"]}">}}}}\n')
@@ -69,4 +73,3 @@ with open('data/photos.yaml') as d:
         with open(f'content/photos/{name}.md', 'w') as f:
             f.write(f'---\ntitle: {title}\n---\n')
             f.write(f'{{{{< photos limit="999" dir="{title}">}}}}\n')
-        # print(f'done {name}.md')
