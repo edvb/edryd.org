@@ -68,9 +68,9 @@
     <script>
       lightbox.option({
               'resizeDuration': 250
-            })
+            });
       $(".photos").justifiedGallery({
-              rowHeight: 300,
+              rowHeight: 350,
               margins: 3,
               {{ if or (eq .Title .Site.Title) (eq .Title "photos") }}
                 lastRow: 'hide',
