@@ -1,8 +1,24 @@
 photos:
+  - name: 'boston'
+    year: 2021
+    lat: 42.35
+    long: -71.06
+  - name: 'graduation'
+    year: 2021
+    lat: 47.36
+    long: -122.16
+  - name: 'discovery park'
+    year: 2021
+    lat: 47.39
+    long: -122.25
+  - name: 'skyline'
+    year: 2021
+    lat: 37.29
+    long: -122.18
   - name: 'seattle'
     year: 2020
-    lat: 37.29
-    long: -122.16
+    lat: 47.36
+    long: -122.19
   - name: 'quarantine'
     year: 2020
     lat: 37.29
