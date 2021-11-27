@@ -1,5 +1,5 @@
 ---
-title: "Protein Folding Simulations Using Homology"
+title: "Protein Folding with Homology Simulations"
 date: 2018-08-12
 tags: tech biology simulations
 categories: tech
