@@ -86,11 +86,12 @@ lines connecting them represent the gluon field.
 Although this gets around the infinite possible configurations, it is still an extremely large
 problem. To reduce the complexity further so it can be computed in a reasonable time a Monte Carlo
 algorithm is utilized. Monte Carlo is a method of using random sampling to approximate a problem,
-it has many applications to problems in biology (see here for it used for protein folding),
+it has many applications to problems in biology ([see here for it used in protein folding][1]),
 math, and physics. Monte Carlo is best demonstrated as seen below to approximate the value of pi
 by seeing if a random point lies within the circle or not, with the more random points the closer
 to the true value you get.
 
+[1]: /posts/homology
 ![monte carlo](https://upload.wikimedia.org/wikipedia/commons/8/84/Pi_30K.gif)
 
 Now with lattice QCD it is possible to preform calculations and make predictions about quarks and
