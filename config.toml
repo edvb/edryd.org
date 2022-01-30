@@ -2,7 +2,7 @@ baseURL = "https://edryd.org/"
 languageCode = "en-us"
 title = "edryd"
 name = "Ed van Bruggen"
-copyright = "Copyleft © 2017-2021 Ed van Bruggen"
+copyright = "Copyleft © 2017-2022 Ed van Bruggen"
 
 enableInlineShortcodes = true
 ignoreErrors = ["error-remote-getjson"]
