@@ -5,8 +5,8 @@ tags: tech biology simulations
 categories: tech
 ---
 
-This article is based on research I did as a freshman undergrad, see the full project
-[here](http://2018.igem.org/Team:Washington/Model).
+This article is based on research I did as a freshman undergrad, see the [full project
+here](http://2018.igem.org/Team:Washington/Model).
 
 ![protein](protein.gif)
 
