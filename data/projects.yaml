@@ -30,10 +30,10 @@ research:
     link: 'https://github.com/edvb/mono-sbb'
   - name: 'UW DRiP'
     desc: 'Lattice QCD'
-    link: '/docs/lattice-qcd.pdf'
+    link: '/posts/lattice-qcd/'
   - name: 'Protein Folding'
     desc: 'Rosetta homology simulations'
-    link: 'http://2018.igem.org/Team:Washington/Model'
+    link: '/posts/homology/'
 websites:
   - name: 'MHEA'
     desc: 'Mental Health for Every Adolescent'
