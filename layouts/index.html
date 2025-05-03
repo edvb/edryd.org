@@ -5,30 +5,33 @@
           <div class="col-lg-6">
             <h2 class="heading">ED VAN BRUGGEN</h2>
             <!-- TODO move to own markdown file -->
-            <p>
-            I'm a physics PhD student at the University of Massachusetts Amherst currently researching
-            neutrionless double beta decay in the <a href="https://nexo.llnl.gov/">nEXO collaboration</a>.
-            In the past I conducted
-            research on new Dark Higgs models which would allow for dark matter production at the
-            Large Hadron Collider. In addition, I worked on a project to automate
-            <a href="https://iris-hep.org/fellows/edvanbruggen.html">truth level reinterpretations</a>
-            of particle analyses. I am also the lead web developer for
-            <a href="https://projectmhea.org">Mental Health for Every Adolescent</a>.
+            <p>Physics PhD student at UMass Amherst, currently working in the <a
+              href="https://nexo.llnl.gov/">nEXO collaboration</a> searching for <a
+              href="https://en.wikipedia.org/wiki/Neutrinoless_double_beta_decay">neutrinoless double beta decay</a>. Detecting this decay for the first time would
+            allow us to directly measure the mass of <a
+              href="https://en.wikipedia.org/wiki/Neutrino">neutrinos</a>, furthering our understanding of the universe
+            <a href="https://en.wikipedia.org/wiki/Physics_beyond_the_Standard_Model">beyond the standard model</a> of particle physics.</p>
+            <p>In our lab, we characterize <a
+              href="https://en.wikipedia.org/wiki/Silicon_photomultiplier">Silicon PhotoMultipliers</a> by detecting <a
+              href="https://github.com/Pocar-Lab/SPE-Analysis">single photon events</a>.
             </p>
-            <p>
-            When I'm not busy with grad school I do
-            <a href="{{ "photos" | relURL }}">photography</a> and work on various
-            <a href="{{ "projects" | relURL}}">programming projects.</a> You can find my full
-            <a href="{{ "docs/vanbruggen_resume.pdf" | relURL}}">resume here</a> and contact
-            information below.
+            <p>Previously, I studied new Dark Higgs models to explore direct dark
+            matter production at the Large Hadron Collider, and developed a project
+            to automate <a
+              href="https://iris-hep.org/fellows/edvanbruggen.html">truth-level reinterpretations</a>
+            of particle physics analyses. I also did work
+            simulating protein folding for <a
+              href="https://2018.igem.org/Team:Washington">chemically induced dimerization of nanobodies</a>, allowing for the creation of single
+            small molecule biosensors.</p>
+            <p>Lead web developer for <a href="https://projectmhea.org">Mental Health for Every Adolescent</a>.</p>
             </p>
+          </div>
+          <div class="col-8 col-lg-5 mx-auto">
+            <p><img src="img/ed.jpg" class="img-fluid rounded-circle"></p>
             <div class="links text-center display-4">
               {{ partial "links.html" }}
             </div>
             {{ partial "quote.html" (index (shuffle $.Site.Data.quotes.quotes) 0) }}
-          </div>
-          <div class="col-8 col-lg-5 mx-auto">
-            <p><img src="img/ed.jpg" class="img-fluid rounded-circle"></p>
           </div>
         </div>
       </div>
