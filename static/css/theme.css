@@ -919,7 +919,11 @@ a {
   color: #555;
   text-decoration: none;
   font-style: italic;
-  /* font-weight: 500; */
+}
+
+p a {
+  color: #303030;
+  font-weight: 600;
 }
 
 a:hover, a:focus {
