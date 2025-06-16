@@ -439,8 +439,8 @@ facing away from the case's opening making the cable be a little tangled
 inside.
 
 Overall I am extremely happy with how the keyboard turned out and learned a lot
-from making it myself. Feel free to [contact](/contact) me with any questions
-or advice with your own keyboard!
+from making it myself. Feel free to [contact](/index.html#contact) me with any
+questions or advice with your own keyboard!
 
 ## see also
 
