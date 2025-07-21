@@ -1,6 +1,7 @@
 code:
-  - name: 'tisp'
-    desc: 'Tiny lisp, simple and embeddable scheme-like language'
+  - name: 'eevo'
+    desc: 'Functional record language for data oriented scripting'
+    link: 'https://eevo.pub'
   - name: 'gst'
     desc: 'Painless CLI gist creator'
   - name: 'markman'
