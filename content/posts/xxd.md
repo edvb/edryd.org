@@ -16,7 +16,7 @@ itself. This is done at compile time so it is statically bundled with the binary
 external text file dependencies.
 
 [1]: https://www.tutorialspoint.com/cprogramming/c_file_io.htm
-[2]: https://edryd.org/projects/tisp
+[2]: https://eevo.pub
 
 To achieve this a command line tool called xxd can be used. xxd is tool to create hex dumps of any
 file given to it, and might already be on your Linux distro as it is included with
@@ -116,7 +116,7 @@ Here `file.h` is the produced header, and `file1.txt`, `file2.txt` are the files
 Simply add `file.h` as a dependency to the C file which includes it to have the recipe run when
 needed. For a real world use of this method see [my programming language][4].
 
-[4]: https://github.com/edvb/tisp/blob/master/Makefile#L27
+[4]: https://github.com/eevolang/eevo/blob/7c45f869f460d12e3cb091c6a918dd66adb3cb80/Makefile#L28
 
 Using xxd is a simple but effective way to convert any file to a C header, allowing it to be
 included when compiled and removing the need for the file path to exist at run
