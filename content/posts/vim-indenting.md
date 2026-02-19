@@ -58,19 +58,19 @@ second `\ `.
 
 	:set listchars=tab:\|\
 
-![tabs-1](/assets/img/posts/vim-indenting/tabs-1.png)
+![tabs-1](/img/posts/vim-indenting/tabs-1.png)
 
 To have hard tabs look like dots you can use this:
 
 	:set listchars=tab:··
 
-![tabs-2](/assets/img/posts/vim-indenting/tabs-2.png)
+![tabs-2](/img/posts/vim-indenting/tabs-2.png)
 
 Another example:
 
 	:set listchars=tab:»-
 
-![tabs-3](/assets/img/posts/vim-indenting/tabs-3.png)
+![tabs-3](/img/posts/vim-indenting/tabs-3.png)
 
 ### indent-guides plugin
 
@@ -78,7 +78,7 @@ This customization can be extending beyond what Vim offers by default with a
 plugin such as [vim-indent-guides][1]. indent-guides lets you color and
 stylize not only hard tabs, but soft ones, as well as many other features.
 
-![indentation-guides](/assets/img/posts/vim-indenting/indent-guides.png)
+![indentation-guides](/img/posts/vim-indenting/indent-guides.png)
 
 ## configuring indents
 
@@ -131,7 +131,7 @@ lines such as these in your `.vimrc` file:
 
 ### polyglot plugin
 
-![languages](/assets/img/posts/vim-indenting/prog-languages.png)
+![languages](/img/posts/vim-indenting/prog-languages.png)
 
 Unless you want to add a new line to your `.vimrc` every time you want to edit
 a new type of file, I would recommend installing the Vim plugin
