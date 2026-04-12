@@ -1,6 +1,6 @@
 ---
 title: "Tisp v0.1 Release"
-tags: tech programming languages projects
+tags: tech programming language project
 categories: tech
 date: 2024-11-21
 ---
