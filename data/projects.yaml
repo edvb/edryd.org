@@ -1,6 +1,6 @@
 code:
   - name: 'eevo'
-    desc: 'Functional record language for data oriented scripting'
+    desc: 'Simple yet expressive high-level functional scripting language'
     link: 'https://eevo.pub'
   - name: 'gst'
     desc: 'Painless CLI gist creator'
@@ -20,7 +20,7 @@ code:
     link: 'https://tools.suckless.org/dmenu/patches/center'
 research:
   - name: 'SiPM'
-    desc: 'Single Photon Event analysis of Silicon PhotoMultipliers'
+    desc: 'Single Photo-Electron analysis of Silicon PhotoMultipliers'
     link: 'https://github.com/Pocar-Lab/SPE-Analysis'
   - name: 'RECAST-workflow'
     desc: 'Expanding catalog of event generators'
