@@ -106,3 +106,118 @@
   -moz-transform: rotate(0deg) translateX(50%);
   transform: rotate(0deg) translateX(50%);
 }
+
+/* Cover Section */
+#cover {
+  height: 100vh;
+  font-family: "Raleway", sans-serif;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.top-link {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 2px darkgrey;
+}
+
+.top-link:hover {
+  text-decoration: underline;
+}
+
+.cover-content {
+  margin-top: auto;
+  padding: 40px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+#cover h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px darkgrey;
+}
+
+#cover time {
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-shadow: 0 0 5px darkgrey;
+}
+
+.scroll-button {
+  background: white;
+  color: #1e1e1e;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.scroll-button:hover {
+  background: #f0f0f0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cover-text h1 {
+    font-size: 2rem;
+  }
+
+  .cover-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+
+/* Galleries index page */
+ed-galleries {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* space-around */
+  align-items: stretch;
+}
+
+/* Gallery item */
+ed-galleries a {
+  flex: 1 0 auto;
+  margin: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+
+  text-decoration: none;
+  color: inherit;
+
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Gallery cover photo */
+ed-galleries a img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Animate entry */
+ed-galleries a:hover {
+  transform: translateY(-10px);
+}

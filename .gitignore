@@ -9,5 +9,5 @@ tags
 Session.vim
 public
 resources
-content/photos
+content/photos/**/*.md
 content/projects

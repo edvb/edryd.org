@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }}</title>
+    <link rel="stylesheet" href="/css/custom.css" />
+    <link rel="stylesheet" href="/css/justifiedGallery.min.css" />
+    <link rel="stylesheet" href="/css/lightbox.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Raleway:wght@800&display=swap">
+    <style> body { margin: 0px; } </style>
+  </head>
+
+  <body>
+    {{ .Content}}
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.justifiedGallery.min.js"></script>
+    <script src="/js/lightbox.min.js"></script>
+    <script>
+      lightbox.option({
+        'resizeDuration': 250
+      });
+      $("#gallery").justifiedGallery({
+        rowHeight: 350,
+        margins: 8,
+        // lastRow: 'hide', // TODO maxRows instead?
+        lastRow: 'nojustify',
+        captions: false
+      })
+    </script>
+  </body>
+</html>

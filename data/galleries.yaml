@@ -1,0 +1,96 @@
+galleries:
+  - title: "Alf Graduation"
+    date: 2023
+    cover: "21340029.jpg"
+  - title: "Cameras"
+    date: 2023
+    cover: "01.jpg"
+
+  # - name: 'tahoe'
+  #   date: 2021
+  #   lat: 0
+  #   long: 0
+  # - name: 'russell st'
+  #   date: 2021
+  #   lat: 0
+  #   long: 0
+  # - name: 'northampton'
+  #   date: 2021
+  #   lat: 0
+  #   long: 0
+  - title: 'Boston'
+    date: 2021
+    cover: 'DSC02522.jpg'
+    lat: 42.35
+    long: -71.06
+  - title: 'Redwood Shores'
+    date: 2021
+    cover: '1062140-R1-007-2-01.jpg'
+    lat: 37.29
+    long: -122.16
+  - title: 'Graduation'
+    date: 2021
+    cover: 'DSC02305.jpg'
+    lat: 47.36
+    long: -122.16
+  - title: 'Discovery Park'
+    date: 2021
+    cover: 'DSC02112.jpg'
+    lat: 47.39
+    long: -122.25
+  - title: 'Mt Baker'
+    date: 2021
+    cover: 'DSC02012.jpg'
+    lat: 48.46
+    long: -121.48
+  - title: 'Skyline'
+    date: 2021
+    cover: 'DSC01830.jpg'
+    lat: 37.29
+    long: -122.18
+
+  - title: 'Seattle'
+    date: 2020
+    cover: 'DSC01631.jpg'
+    lat: 47.36
+    long: -122.19
+  - title: 'Quarantine'
+    date: 2020
+    cover: 'DSC00649.jpg'
+    lat: 37.29
+    long: -122.16
+
+  # - title: 'Wales'
+  #   date: 2019
+  #   lat: 0
+  #   long: 0
+  # - title: 'Central Europe'
+  #   date: 2019
+  #   lat: 0
+  #   long: 0
+
+  - title: 'New Zealand'
+    date: 2018
+    cover: 'DSC07836.jpg'
+    lat: 0
+    long: 0
+  - title: 'Galapagos'
+    date: 2017
+    cover: 'DSC05174.jpg'
+    lat: -.40
+    long: -90.33
+  - title: 'Britain'
+    date: 2016
+    cover: '2016-07-30_04.19.53.jpg'
+    lat: 51.30
+    long: -.07
+  - title: 'Peru'
+    date: 2015
+    cover: 'IMG_20150806_080710.jpg'
+    lat: -12.03
+    long: -77.02
+  - title: 'France'
+    date: 2014
+    cover: 'IMG_20140805_025242.jpg'
+    lat: 48.51
+    long: 2.21

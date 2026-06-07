@@ -5,11 +5,13 @@ import urllib.request
 import requests
 import shutil
 import os
+import chevron
+from pathlib import Path
 
 # TODO flag -v for verbose printing
 # TODO flag -d for destination
 
-# TODO write in tisp
+# TODO write in eevo
 with open('data/projects.yaml') as d:
     data = yaml.load(d, Loader=yaml.FullLoader)
     if not os.path.exists('content/projects'):
@@ -41,8 +43,6 @@ with open('data/projects.yaml') as d:
         with open(f'content/projects/{name}.md', 'w') as f:
             f.write(f'---\ntitle: {name}\ndescription: {desc}\n---\n')
         url = f'https://raw.githubusercontent.com/edvb/{name}/master/README.md'
-        if name == 'tisp':
-            url = 'https://raw.githubusercontent.com/edvb/tisp/master/doc/tisp.7.md'
         with urllib.request.urlopen(url) as response, open(f'content/projects/{name}.md', 'ab') as f:
             for chunk in iter(lambda: response.read(1), ''):
                 if chunk == b'':
@@ -55,21 +55,58 @@ with open('data/projects.yaml') as d:
                     break
             shutil.copyfileobj(response, f)
 
-# TODO replace with parital in layout page
-# https://gohugo.io/templates/lookup-order/
+def gen_galleries(input_file):
+    # Read the input YAML file
+    with open(input_file, 'r') as f:
+        data = yaml.safe_load(f)
+
+    galleries = []
+
+    # Process each gallery
+    for gallery in data['galleries']:
+        title = gallery['title']
+        date = gallery['date']
+        folder = "photos/" + str(date) + "/" + title.lower().replace(' ', '-')
+
+        # Get all image files from the folder with the same name as title
+        folder_path = "content/" / Path(folder)
+        images = [folder + "/" + f.name for f in folder_path.iterdir()
+                    # Only include images, not index pages
+                    if f.is_file() and f.suffix != '.md']
+
+        # Create new YAML structure
+        new_gallery = {
+            'title': title,
+            'date': date,
+            'link': folder,
+            # TODO cover or first image
+            'cover': folder + "/" + gallery['cover'],
+            'images': images
+        }
+
+        # Add to galleries index
+        galleries.append(new_gallery)
+
+    return galleries
+
+def transform_galleries(input_file, templ_index, templ_gallery):
+    galleries = gen_galleries(input_file)
+
+    os.makedirs('content/photos', exist_ok=True)
+    print(f'creating content/photos/_index.md')
+    with open(templ_index, 'r') as templ, \
+         open('content/photos/_index.md', 'w') as f:
+        f.write(chevron.render(templ, { 'galleries': galleries }))
+
+    for gallery in galleries:
+        with open(templ_gallery, 'r') as templ:
+            os.makedirs(f'content/photos/{gallery['date']}', exist_ok=True)
+            # TODO make content/photos/{date}/_index.md for all photos that year,
+            #      with list on galleries page for each year
+            print(f'creating content/{gallery['link']}/_index.md')
+            with open(f'content/{gallery['link']}/_index.md', 'w') as f:
+                f.write(chevron.render(templ, gallery))
+
 print(f'creating photo pages')
-with open('data/photos.yaml') as d:
-    data = yaml.load(d, Loader=yaml.FullLoader)
-    if not os.path.exists('content/photos'):
-        os.mkdir('content/photos')
-    with open('content/photos/_index.md', 'w') as f:
-        f.write('---\ntitle: photos\n---\n')
-        f.write(f'{{{{< photos limit="999" dir="best">}}}}\n')
-        for album in data['photos']:
-            f.write(f'{{{{< photos limit="5" dir="{album["name"]}">}}}}\n')
-    for album in data['photos']:
-        title = album['name']
-        name = title.replace(' ', '-')
-        with open(f'content/photos/{name}.md', 'w') as f:
-            f.write(f'---\ntitle: {title}\n---\n')
-            f.write(f'{{{{< photos limit="999" dir="{title}">}}}}\n')
+transform_galleries('data/galleries.yaml',
+                    'templ/index.md', 'templ/gallery.md')
