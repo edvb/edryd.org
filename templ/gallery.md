@@ -5,7 +5,7 @@ layout: gallery
 
 <!-- Cover photo -->
 <section id="cover" style="background: url('/{{cover}}') center/cover;">
-  <a href="https://edryd.org" class="top-link">edryd</a>
+  <a href="https://edryd.org/photos" class="top-link">edryd</a>
 
   <div class="cover-content">
     <div>
