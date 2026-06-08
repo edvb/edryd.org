@@ -44,9 +44,8 @@
           <div class="col-lg-12">
             <h2 class="heading">PHOTOS</h2>
             <div class="row photos">
-              {{- $files := shuffle (readDir "/static/img/photos/best") }}
-              {{- range first 5 $files -}}
-                {{- $imgURL := print "/img/photos/best/" .Name | relURL }}
+              {{- range (readDir "/content/photos/best") -}}
+                {{- $imgURL := print "/photos/best/" .Name | relURL }}
                 <a href="{{ $imgURL }}" data-lightbox="image-1">
                   <!-- TODO generate thumbnail -->
                   <img src="{{ $imgURL }}" alt="image">
