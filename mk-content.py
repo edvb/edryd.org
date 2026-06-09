@@ -93,20 +93,20 @@ def transform_galleries(input_file, templ_index, templ_gallery):
     galleries = gen_galleries(input_file)
 
     os.makedirs('content/photos', exist_ok=True)
-    print(f'creating content/photos/_index.md')
+    print('creating content/photos/_index.md')
     with open(templ_index, 'r') as templ, \
          open('content/photos/_index.md', 'w') as f:
         f.write(chevron.render(templ, { 'galleries': galleries }))
 
     for gallery in galleries:
         with open(templ_gallery, 'r') as templ:
-            os.makedirs(f'content/photos/{gallery['date']}', exist_ok=True)
+            os.makedirs(f'content/photos/{gallery["date"]}', exist_ok=True)
             # TODO make content/photos/{date}/_index.md for all photos that year,
             #      with list on galleries page for each year
-            print(f'creating content/{gallery['link']}/_index.md')
-            with open(f'content/{gallery['link']}/_index.md', 'w') as f:
+            print(f'creating content/{gallery["link"]}/_index.md')
+            with open(f'content/{gallery["link"]}/_index.md', 'w') as f:
                 f.write(chevron.render(templ, gallery))
 
-print(f'creating photo pages')
+print('creating photo pages')
 transform_galleries('data/galleries.yaml',
                     'templ/index.md', 'templ/gallery.md')
