@@ -32,6 +32,8 @@
             <div class="links text-center display-4">
               {{ partial "links.html" }}
             </div>
+            <br/>
+            <h4 style="text-align:center;"><i>DAILY QUOTE</i></h4>
             {{ partial "quote.html" (index (shuffle $.Site.Data.quotes.quotes) 0) }}
           </div>
         </div>
