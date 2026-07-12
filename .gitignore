@@ -5,9 +5,11 @@
 *.swp
 \#*\#
 
-tags
-Session.vim
+# hugo files
+.hugo_build.lock
 public
 resources
+
+# generated files
 content/photos/**/*.md
 content/projects
