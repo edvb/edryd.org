@@ -66,7 +66,7 @@ def gen_galleries(input_file):
     for gallery in data['galleries']:
         title = gallery['title']
         date = gallery['date']
-        folder = "photos/" + str(date) + "/" + title.lower().replace(' ', '-')
+        folder = "photos/" + str(date) + "/" + title.lower().replace(' ', '-').replace("'", "")
 
         # Get all image files from the folder with the same name as title
         folder_path = "content/" / Path(folder)
