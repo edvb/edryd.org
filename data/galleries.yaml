@@ -46,6 +46,12 @@ galleries:
     lat: 0
     long: 0
     cover: '0003.jpg'
+  - title: 'San Francisco'
+    date: 2021
+    cover: '0003.jpg'
+  - title: 'San Francisco Bay'
+    date: 2021
+    cover: '0003.jpg'
   - title: 'Boston'
     date: 2021
     cover: '0009.jpg'
