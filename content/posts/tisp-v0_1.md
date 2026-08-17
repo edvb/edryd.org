@@ -36,7 +36,7 @@ Together this eventually motivated the creation of a new language which combines
   - Enables simple yet powerful macros to extend syntax by manipulating code like data.
   - Prefix syntax for `Func`, `quote`, `quasiqutote`, `unquote`, and `unquote-splice`.
 - Runtime evaluation
-  - Full language is always available: `read`, `parse`, `eval`, and `print` eevo code during runtime.
+  - Full language is always available: `read`, `parse`, `eval`, and `print` tisp code during runtime.
 - Symmetric printing: values are printed in a format that can be read by the parser
   (with the exception of procedures).
 - Basic error messages and debugging through backtrace `bt`.
@@ -163,7 +163,7 @@ See the documentation of each primitive for more information.
 
 # Core Library
 
-Functions defined in eevo, included by default but not required.
+Functions defined in tisp, included by default but not required.
 
 - `list`, `list*`
 - `if`, `when`, `unless`
