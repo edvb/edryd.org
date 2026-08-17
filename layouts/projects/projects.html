@@ -1,10 +1,16 @@
 {{ define "main" }}
+  <style>
+    .heading:after {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  </style>
   <section>
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
           {{- with .Title }}
-            <h1 class="heading">{{ . | upper }}</h1>
+            <h1 class="heading text-md-center">{{ . | upper }}</h1>
           {{- end }}
           <div class="row">
             <!-- TODO remove code duplication from _default/list -->
@@ -17,7 +23,7 @@
                   <div class="col-lg-8"><a href="{{ $link }}" class="italic-off text-primary">{{ .desc }}</a></div>
                 </div>
               {{ end }}
-              <h2 class="heading pt-4">RESEARCH</h2>
+              <h2 class="heading pt-4 text-md-center">RESEARCH</h2>
               {{ range $.Site.Data.projects.research }}
                 <div class="row text-inc">
                   {{ $link := or .link (path.Join "projects/" .name | relURL) }}
@@ -25,7 +31,7 @@
                   <div class="col-lg-8"><a href="{{ $link }}" class="italic-off text-primary">{{ .desc }}</a></div>
                 </div>
               {{ end }}
-              <h2 class="heading pt-4">WEBSITES</h2>
+              <h2 class="heading pt-4 text-md-center">WEBSITES</h2>
               <!-- TODO cards with photos -->
               {{ range $.Site.Data.projects.websites }}
                 <div class="row text-inc">
@@ -33,7 +39,7 @@
                   <div class="col-lg-8"><a href="{{ .link }}" class="italic-off text-primary">{{ .desc }}</a></div>
                 </div>
               {{ end }}
-              <h2 class="heading pt-4">SCRIPTS</h2>
+              <h2 class="heading pt-4 text-md-center">SCRIPTS</h2>
               {{ range $.Site.Data.projects.scripts }}
                 {{ $link := path.Join "projects/" .name | relURL }}
                 {{ $name := .name }}
